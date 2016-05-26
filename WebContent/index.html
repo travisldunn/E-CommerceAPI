@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MC</title>
+</head>
+<body>
+<script>
+	onload = function() {
+		document.getElementById("btn").addEventListener("click", function(){
+			var xhr= new XMLHttpRequest();
+			xhr.open("PUT", "rest/login");
+			xhr.setRequestHeader("Content-Type", "application/json");
+			xhr.onreadystatechange = function() {
+				console.log("success");
+				console.log(xhr.responseText);
+			}
+			xhr.send(JSON.stringify({email: "r", password: "r"}));
+		});
+	}
+</script>
+<h1>MC</h1>
+<button id="btn">BTN</button>
+</body>
+</html>
